@@ -6,6 +6,7 @@ export default function SpecialtiesPage() {
   const { data: specialties, isLoading, error } = useQuery({
     queryKey: ['specialties'],
     queryFn: specialtiesApi.getAll,
+    retry: 1,
   });
 
   if (isLoading) {
@@ -20,12 +21,21 @@ export default function SpecialtiesPage() {
   }
 
   if (error) {
+    if (import.meta.env.DEV) {
+      console.error('Error al cargar especialidades:', error);
+    }
     return (
       <div className="text-center py-12">
-        <p className="text-red-600">Error al cargar las especialidades</p>
+        <p className="text-red-600 mb-2">Error al cargar las especialidades</p>
+        <p className="text-sm text-gray-500">
+          {error instanceof Error ? error.message : 'Por favor, intenta nuevamente más tarde'}
+        </p>
       </div>
     );
   }
+
+  // Asegurar que specialties sea un array
+  const specialtiesList = Array.isArray(specialties) ? specialties : [];
 
   return (
     <div className="space-y-6">
@@ -40,14 +50,13 @@ export default function SpecialtiesPage() {
       </div>
 
       {/* Grid de especialidades */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {specialties?.map((specialty) => (
-          <SpecialtyCard key={specialty.id} specialty={specialty} />
-        ))}
-      </div>
-
-      {/* Empty state */}
-      {specialties?.length === 0 && (
+      {specialtiesList.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {specialtiesList.map((specialty) => (
+            <SpecialtyCard key={specialty.id} specialty={specialty} />
+          ))}
+        </div>
+      ) : (
         <div className="text-center py-12">
           <p className="text-gray-600">No hay especialidades disponibles</p>
         </div>

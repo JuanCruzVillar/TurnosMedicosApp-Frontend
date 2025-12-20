@@ -11,10 +11,10 @@ export default function HomePage() {
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 md:p-12 text-white">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          {user ? `¡Bienvenido, ${user.firstName}!` : 'Bienvenido a TurnosApp'}
+          {user ? `¡Bienvenido, ${user.firstName}!` : 'Bienvenido a Hospital San Juan'}
         </h1>
         <p className="text-xl text-blue-100 mb-8">
-          Sistema de gestión de turnos médicos. Reserva tu consulta de forma rápida y sencilla.
+          Sistema de gestión de turnos médicos. Reserva tu consulta de forma rápida, segura y sencilla.
         </p>
         {!user && (
           <div className="flex flex-wrap gap-4">

@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../store/authStore';
 import { Button } from '../ui/Button';
+import { translateRole } from '../../utils/roleTranslations';
 
 export default function Header() {
   const user = useAuthStore((state) => state.user);
@@ -21,7 +22,10 @@ export default function Header() {
             <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
               <span className="text-2xl">🏥</span>
             </div>
-            <span className="text-xl font-bold text-gray-900">TurnosApp</span>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold text-gray-900">Hospital San Juan</span>
+              <span className="text-xs text-gray-500 hidden sm:block">Sistema de Turnos Médicos</span>
+            </div>
           </Link>
 
           {/* Navigation */}
@@ -55,7 +59,7 @@ export default function Header() {
                   <p className="text-sm font-medium text-gray-900">
                     {user.firstName} {user.lastName}
                   </p>
-                  <p className="text-xs text-gray-500">{user.role}</p>
+                  <p className="text-xs text-gray-500">{translateRole(user.role)}</p>
                 </div>
                 <Button variant="outline" size="sm" onClick={handleLogout}>
                   Cerrar Sesión

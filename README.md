@@ -1,6 +1,6 @@
-# TurnosApp - Frontend
+# Hospital San Juan - Frontend
 
-Frontend de la aplicación TurnosApp desarrollado con **React 19**, **TypeScript** y **Vite**.
+Frontend del sistema de gestión de turnos médicos del Hospital San Juan, desarrollado con **React 19**, **TypeScript** y **Vite**.
 
 ## 🛠️ Stack Tecnológico
 
@@ -50,7 +50,65 @@ src/
 - UI/UX responsive y moderna
 - Manejo de formularios y validaciones
 - Optimización de peticiones HTTP
+- Manejo de errores y estados de carga
+- Rutas protegidas por roles
+
+## 🚀 Inicio Rápido
+
+### Prerrequisitos
+- Node.js 18+ y npm
+- Backend API ejecutándose (ver [README principal](../TurnosApp/README.md))
+
+### Instalación
+
+1. **Instalar dependencias**:
+```bash
+npm install
+```
+
+2. **Configurar variables de entorno**:
+   - Crear archivo `.env` en la raíz del proyecto:
+   ```
+   VITE_API_URL=http://localhost:5294/api
+   ```
+   - Para producción, usar la URL de tu API:
+   ```
+   VITE_API_URL=https://api.turnosapp.com/api
+   ```
+
+3. **Ejecutar en desarrollo**:
+```bash
+npm run dev
+```
+
+4. **Build para producción**:
+```bash
+npm run build
+```
+
+Los archivos de producción estarán en `dist/`
+
+## 📝 Scripts Disponibles
+
+- `npm run dev` - Inicia el servidor de desarrollo
+- `npm run build` - Genera el build de producción
+- `npm run preview` - Previsualiza el build de producción
+- `npm run lint` - Ejecuta el linter
+
+## 🔒 Seguridad
+
+- Los tokens JWT se almacenan en `localStorage`
+- Los interceptors de Axios manejan automáticamente la autenticación
+- Las rutas están protegidas por roles
+- Los logs de desarrollo están condicionados a `import.meta.env.DEV`
+
+## 🎨 UI/UX
+
+- Diseño mobile-first con Tailwind CSS
+- Componentes reutilizables en `src/components/ui/`
+- Estados de carga y error manejados consistentemente
+- Feedback visual para todas las acciones del usuario
 
 ---
 
-**Parte del proyecto fullstack TurnosApp - Ver [README principal](../TurnosApp/README.md) para más información.**
+**Parte del proyecto fullstack Hospital San Juan - Ver [README principal](../TurnosApp/README.md) para más información.**

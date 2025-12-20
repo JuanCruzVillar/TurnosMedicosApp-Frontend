@@ -136,6 +136,7 @@ export default function RegisterPage() {
                 placeholder="••••••••"
                 value={formData.password}
                 onChange={handleChange}
+                autoComplete="new-password"
                 required
                 minLength={6}
               />

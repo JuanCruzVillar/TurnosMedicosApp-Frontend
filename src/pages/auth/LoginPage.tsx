@@ -46,7 +46,7 @@ export default function LoginPage() {
           </div>
           <CardTitle className="text-2xl font-bold">Iniciar Sesión</CardTitle>
           <CardDescription>
-            Ingresa tus credenciales para acceder a TurnosApp
+            Ingresa tus credenciales para acceder a Hospital San Juan
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -67,6 +67,7 @@ export default function LoginPage() {
                 placeholder="tu@email.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                autoComplete="username"
                 required
               />
             </div>
@@ -81,6 +82,7 @@ export default function LoginPage() {
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                autoComplete="current-password"
                 required
               />
             </div>
@@ -110,7 +112,7 @@ export default function LoginPage() {
               </div>
               <div className="bg-gray-50 p-2 rounded">
                 <p className="font-semibold">Profesional:</p>
-                <p className="text-gray-600">dr.gomez@turnosapp.com / Doctor123!</p>
+                <p className="text-gray-600">dr.gomez@hospitalsanjuan.com / Doctor123!</p>
               </div>
             </div>
           </div>
