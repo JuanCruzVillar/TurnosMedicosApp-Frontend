@@ -1,6 +1,6 @@
 # Hospital San Juan - Frontend
 
-Frontend del sistema de gestión de turnos médicos del Hospital San Juan, desarrollado con **React 19**, **TypeScript** y **Vite**.
+Frontend del sistema de mi proyecto personal de  gestión de turnos médicos del "Hospital San Juan", desarrollado con **React 19**, **TypeScript** y **Vite**.
 
 ## 🛠️ Stack Tecnológico
 
@@ -112,3 +112,5 @@ Los archivos de producción estarán en `dist/`
 ---
 
 **Parte del proyecto fullstack Hospital San Juan - Ver [README principal](../TurnosApp/README.md) para más información.**
+
+Autor: Juan Cruz Villar
